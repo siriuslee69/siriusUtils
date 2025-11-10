@@ -1,5 +1,5 @@
-include "io/responses"
-include "math/boolean"
+include "../io/responses"
+include "../math/boolean"
 
 {.define: test.}
 
