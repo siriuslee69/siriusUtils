@@ -1,5 +1,4 @@
 import strutils
 
-proc toWords(str: string): seq[string] =
-    return str.splitWhitespace()
-    
+template toWords(str: string): seq[string] =
+    str.splitWhitespace()
