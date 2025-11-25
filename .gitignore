@@ -1,1 +1,12 @@
+# Nim/Nimble build artifacts
+nimcache/
+bin/
+build/
+
+# Executables
 *.exe
+*.out
+
+# Extensionless binaries emitted next to sources
+math/genetic
+math/weights
