@@ -1,6 +1,3 @@
-import std/unittest
-
-
 proc rotLeft*[T: uint8|uint16|uint32|uint64|int8|int16|int32|int64](a: T, k: uint8): T =
     ## Uses a bit mask with a bool AND operation, cost is approx. 3 cycles to set up p
     # When statements are evaluated at compile time (during the creation of the exectubale, not after. Same goes for const definitions)
@@ -32,6 +29,8 @@ proc rotLeftM*[T: uint8|uint16|uint32|uint64|int8|int16|int32|int64](a: T, k: ui
 
 #Compile and run the tests with "nim c -d:test -r boolean.nim" or run all tests via "nimble test"
 when defined(test):
+    import std/unittest
+    
     suite "BooleanOps":
         test "rotLeft":
             const t1: uint8 = 242

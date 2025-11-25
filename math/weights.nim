@@ -1,5 +1,3 @@
-import std/unittest
-
 type 
     WeightMap = seq[int]
 
@@ -54,6 +52,8 @@ proc mapValue*(weightMap: WeightMap, x: int): int =
 
 #Compile and run the tests with "nim c -d:test -r weights.nim" or run all tests via "nimble test"
 when defined(test):
+    import std/unittest
+    
     suite "Weights":
         test "weightMap":
             const 

@@ -1,4 +1,4 @@
-import std/unittest, strutils
+import strutils
 
 proc isPositive*(str: string): bool =
     ## Returns true for positive sounding strings, false otherwise.
@@ -18,6 +18,8 @@ proc isPositive*(str: string): bool =
 
 #Compile and run the tests with "nim c -d:test -r responses.nim" or run all tests via "nimble test"
 when defined(test):
+    import std/unittest
+    
     suite "Input/Output tests":
         test "isPositive":
             for word in ["yes", "y", "+", "ja", "oui", "yarp", "ye", "yep", ]:

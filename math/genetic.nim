@@ -1,5 +1,3 @@
-import std/unittest, macros
-
 type Op[T, Q : SomeNumber] = tuple #T is the input type and Q the return type of each proc/op
     n: string #name
     w: int    #weight
@@ -22,6 +20,8 @@ const
 
 #Compile and run the tests with "nim c -d:test -r genetic.nim" or run all tests via "nimble test"
 when defined(test):
+    import std/unittest
+    
     suite "GeneticOps":
         test "op template":
             var 
