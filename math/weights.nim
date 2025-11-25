@@ -42,6 +42,8 @@ proc mapValue(weightMap: seq[(int,int)], weight: int): int =
             return weightMap[i][0]
         i.inc()
 
+
+#Compile and run the tests with "nim c -d:test -r weights.nim" or run all tests via "nimble test"
 when defined(test):
     suite "Weights":
         test "weightMap":

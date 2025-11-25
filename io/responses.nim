@@ -16,7 +16,7 @@ proc isPositive*(str: string): bool =
     else: 
         return false
 
-#Compile and run the tests with "nim c -d:test -r responses.nim" :) 
+#Compile and run the tests with "nim c -d:test -r responses.nim" or run all tests via "nimble test"
 when defined(test):
     suite "Input/Output tests":
         test "isPositive":

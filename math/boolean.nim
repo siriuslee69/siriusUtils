@@ -29,7 +29,7 @@ proc rotLeftM*[T: uint8|uint16|uint32|uint64|int8|int16|int32|int64](a: T, k: ui
     return (a shl p or a shr q)
 
 
-#Compile and run the tests with "nim c -d:test -r boolean.nim" :) 
+#Compile and run the tests with "nim c -d:test -r boolean.nim" or run all tests via "nimble test"
 when defined(test):
     suite "BooleanOps":
         test "rotLeft":

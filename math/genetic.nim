@@ -20,7 +20,7 @@ const
         ( "not", 1, proc(x,y: int): int = not x)
         ]
 
-#Compile and run the tests with "nim c -d:test -r boolean.nim" :) 
+#Compile and run the tests with "nim c -d:test -r genetic.nim" or run all tests via "nimble test"
 when defined(test):
     suite "GeneticOps":
         test "op template":
