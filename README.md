@@ -16,6 +16,12 @@ You can run all tests at once by compiling and running the siriusUtils.nim with 
 nim c -d:test -r siriusUtils.nim
 ```
 
+Or alternatively using Nimble:
+
+```bash
+nimble test
+```
+
 ## Warning
 
 Use at your own risk. Subject to change. 
