@@ -6,7 +6,7 @@ This repo is meant to be a collection of some code I often use and want to have 
 
 Each proc has its tests written right below them. 
 
-To test everything, first, go into an empty library, make sure you have git installed and:
+To test everything, first, go into a folder of your choice, make sure you have git installed and:
 
 ```bash
 git clone https://github.com/siriuslee69/siriusUtils
