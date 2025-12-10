@@ -5,22 +5,44 @@ This repo is meant to be a collection of some code I often use and want to have 
 ## Layout
 
 Each proc has its tests written right below them. 
-They can be called with 
+
+To test everything, first, go into an empty library, make sure you have git installed and:
+
 ```bash
-nim c -d:test -r filename.nim
+git clone https://github.com/siriuslee69/siriusUtils
 ```
 
-You can run all tests at once by compiling and running the siriusUtils.nim with the test flag:
+Then inside this directory you can call the tests in different ways.
+You can run all tests at once via nimble:
+
+```bash
+nimble test all
+```
+or just
+
+```bash
+nimble test 
+```
+To test only a single file via nimble, you can use:
+
+```bash
+nimble test filename 
+```
+- no .nim ending or relative path needed.
+
+If you don't want to use nimble for whatever reason, you can just provide the flags manually:
+
 
 ```bash
 nim c -d:test -r siriusUtils.nim
 ```
-
-Or alternatively using Nimble:
+- tests everything.
 
 ```bash
-nimble test
+nim c -d:test -r fileName.nim
 ```
+
+- tests only one file (you have to switch into its directory first though).
 
 ## Warning
 
