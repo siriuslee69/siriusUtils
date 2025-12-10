@@ -1,4 +1,5 @@
 proc toByteSeq*(x: uint64): seq[uint8] =
+    ## Converts a bigger uint to a byteseq
     if x < 255'u64:
         result.add( cast[uint8](x) )
     elif x < 65535'u64: #max uint16 size; also: multiplications are done at compile time (wrote them for better readability)

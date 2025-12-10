@@ -1,19 +1,31 @@
-# Nim/Nimble build artifacts
-nimcache/
-bin/
-build/
+# ignore files with no extention:
+*
+!*/
+!*.*
 
-# Executables
+# normal ignores:
 *.exe
-*.out
+*.dll
+*.data
+*.a
+*.o
+*.so
+*.lib
+*.dylib
+*.pyc
+nimcache
+*.pdb
+*.ilk
+.*
+!.github
+*.glsl
+node_modules
+package-lock.json
+package.json
+tmp
+*.plist
+*.dSYM
 
-# Extensionless binaries emitted next to sources
-math/genetic
-math/weights
-math/weights
-io/responses
-streams/write
-strutils/words
-nimble.develop
-nimble.paths
-nimbledeps
+
+# Don't need nimble.paths yet
+.paths
