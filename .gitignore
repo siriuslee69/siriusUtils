@@ -26,6 +26,5 @@ tmp
 *.plist
 *.dSYM
 
-
 # Don't need nimble.paths yet
-.paths
+*.paths 
