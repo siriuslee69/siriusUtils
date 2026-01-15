@@ -4,18 +4,23 @@ type
         w: int    #weight
         p: proc(x, y: T): Q 
 
+
+proc add[T, Q: SomeNumber](s: seq[Op], op: proc(x,y:T):Q, name: string, weight: int ): void =
+    s.add((name, weight, op))
 const 
     ops*: array[8, Op[int, int]] = [
         ( "and", 1, proc(x,y: int): int = x and y),
         ( "xor", 1, proc(x,y: int): int = x xor y),
         ( "or", 1, proc(x,y: int): int = x or y),
         ( "not", 1, proc(x,y: int): int = not x),
-        ( "sub", 1, proc(x,y:int): int = x - y ),
-        ("add", 1, proc(x,y: int): int = x + y),
-        ( "mul", 1, proc(x,y:int): int = x * y),
-        ( "div", 1, proc(x,y:int): int = 
-            if y == 0: return x
-            else: return (x / y).toInt())
+        ( "sub", 1, proc(x,y: int): int = x - y ),
+        ( "add", 1, proc(x,y: int): int = x + y),
+        ( "mul", 1, proc(x,y: int): int = x * y),
+        ( "div", 1, proc(x,y: int): int = 
+            if y == 0: 
+                return x
+            else: 
+                return (x / y).toInt())
         ]
 
 when defined(test):
