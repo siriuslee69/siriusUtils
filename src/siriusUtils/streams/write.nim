@@ -24,6 +24,6 @@ when defined(test):
 
     suite "io":
         test "Write":
-            echo $toByteSeq(23'u64)
-            echo $toByteSeq(235135531'u64)
+            echo $toByteSeqLE(23'u64)
+            echo $toByteSeqLE(235135531'u64)
             check(true == true)

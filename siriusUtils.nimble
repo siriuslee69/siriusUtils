@@ -6,15 +6,14 @@ version       = "0.1.0"
 author        = "SiriusLee69"
 description   = "Collection of some utilities"
 license       = "Unlicense"
-srcDir        = "."
+srcDir        = "src"
 
 
 # Dependencies
-
-requires "nim >= 1.6.0"
+requires "nim >= 1.6.0", "owlkettle >= 3.0.0", "illwill >= 0.4.0"
 
 when not defined(nimscript):
-  import src/dirs/files
+  import src/siriusUtils/dirs/files
 else:
   proc getAllFilesWithEnding*(sDir: string, y: string): seq[string] =
     result = @[]
@@ -33,10 +32,10 @@ else:
 # Please learn from my mistakes.
 task test, "Run tests":
   let userParam = paramStr(paramCount()) #Grabs the parameter at the last position - in this case, the provided file name
-  if userParam.len() == 0:
-    echo "Please provide the name of the file you'd like to test. If you provide \"all\", then all files will be tested."
+  if userParam.len() == 0 or userParam == "test":
+    exec "nim c -r tests/test_smoke.nim"
     return
-  if (userParam == "all") or (userParam == "test"):
+  if (userParam == "all"):
     let 
       shortenedFileName = userParam.replace(".nim", "") #if the filename has an ending, remove it. The paths are all saved without one too. And need to be, for searching
       paths = "src".getAllFilesWithEnding(".nim")
@@ -101,4 +100,17 @@ task find, "Use local clones for submodules in parent folder":
             exec "git config -f .gitmodules submodule." & current & ".url " & localUrl
             exec "git config submodule." & current & ".url " & localUrl
     exec "git submodule sync --recursive"
+
+
+task buildDesktop, "Build the GTK4 desktop app":
+  exec "nim c -d:release src/siriusUtils/frontend/desktop/app.nim"
+
+task runDesktop, "Run the GTK4 desktop app":
+  exec "nim c -r src/siriusUtils/frontend/desktop/app.nim"
+
+task runCli, "Run the CLI entrypoint":
+  exec "nim c -r src/siriusUtils/frontend/cli/app_cli.nim"
+
+task runTui, "Run the TUI entrypoint":
+  exec "nim c -r src/siriusUtils/frontend/tui/app_tui.nim"
 

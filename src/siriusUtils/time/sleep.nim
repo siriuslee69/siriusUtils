@@ -41,7 +41,7 @@ template takeTimeAverage(n: int64, body: untyped): int64 =
     while i < n:
         sum = sum + T[i]
         i.inc()
-    (sum/n).round().int64()
+    sum div n
 
 when defined(test):
     
