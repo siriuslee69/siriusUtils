@@ -13,7 +13,7 @@ srcDir        = "src"
 requires "nim >= 1.6.0", "owlkettle >= 3.0.0", "illwill >= 0.4.0"
 
 when not defined(nimscript):
-  import src/siriusUtils/dirs/files
+  import src/fylgia_utils/dirs/files
 else:
   proc getAllFilesWithEnding*(sDir: string, y: string): seq[string] =
     result = @[]

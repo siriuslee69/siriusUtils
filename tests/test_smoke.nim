@@ -5,8 +5,8 @@
 # =========================================
 
 import std/unittest
-import ../src/siriusUtils
+import ../src/fylgia_utils
 
 suite "Fylgia Utils":
   test "root module compiles":
-    check SiriusUtilsVersion.len > 0
+    check FylgiaUtilsVersion.len > 0
