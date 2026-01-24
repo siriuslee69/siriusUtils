@@ -1,6 +1,6 @@
 # Progress
 
-Commit Message: add generic limit defaults
+Commit Message: add id/path/pagination defaults
 
 Features (Planned):
 - Add more reusable validation presets for additional app types.
