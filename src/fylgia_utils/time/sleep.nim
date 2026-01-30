@@ -12,7 +12,7 @@ proc sleepMono*(milsecs: int): void =
         discard
     return
 
-template takeTime(body: untyped): int64 =
+template takeTime*(body: untyped): int64 =
     var 
         b: MonoTime
         c: int64
@@ -22,7 +22,7 @@ template takeTime(body: untyped): int64 =
     c = b.ticks - a.ticks
     c
 
-template takeTimes(n: int64, body: untyped): seq[int64] =
+template takeTimes*(n: int64, body: untyped): seq[int64] =
     var 
         i: int64 = 0
         times: seq[int64] = @[]
@@ -31,7 +31,7 @@ template takeTimes(n: int64, body: untyped): seq[int64] =
         i.inc()
     times
 
-template takeTimeAverage(n: int64, body: untyped): int64 =
+template takeTimeAverage*(n: int64, body: untyped): int64 =
     let 
         T:seq[int64] = n.takeTimes(body)
     var 
