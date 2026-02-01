@@ -3,9 +3,9 @@ import std/[os, strutils]
 # Package
 
 version       = "0.1.0"
-author        = "SiriusLee69"
+author        = "siriuslee69"
 description   = "Collection of some utilities"
-license       = "Unlicense"
+license       = "UNLICENSED"
 srcDir        = "src"
 
 
